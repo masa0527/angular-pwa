@@ -12,7 +12,7 @@ module.exports = {
       'tsConfigPath': 'src/tsconfig.server.json',
       'skipCodeGeneration': true
     }),
-    new webpack.LoaderOptionsPlugin({options: {postcss: {}}})
+    new webpack.LoaderOptionsPlugin({options: {postcss: {}}}),
   ],
   module: {
     rules: [
@@ -21,10 +21,10 @@ module.exports = {
       {
         test: /\.css$/,
         use:[
-          'exports-loader?module.exports.toStoring()',
+          'exports-loader?module.exports.toString()',
           'css-loader?{\'sourceMap\':false,\'importLoaders\':1)',
-          'postcss-loader'
-        ]
+          'postcss-loader',
+        ],
       }
     ]
   }
