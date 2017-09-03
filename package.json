@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prerender": "ng build && webpack && node dist/server.js"
+    "prerender": "ng build --prod && webpack && node dist/server.js",
+    "deploy": "npm run prerender && firebase deploy"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/platform-server": "^4.3.6",
     "@angular/router": "^4.2.4",
+    "@angular/service-worker": "^1.0.0-beta.16",
     "core-js": "^2.4.1",
     "normalize.css": "^7.0.0",
     "rxjs": "^5.4.2",
